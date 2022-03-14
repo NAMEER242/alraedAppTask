@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox alignment="CENTER_LEFT" prefHeight="118.0" prefWidth="280.0" spacing="4.0" style="-fx-background-color: #2F363D; -fx-background-radius: 8; -fx-border-color: #141414; -fx-border-radius: 5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label fx:id="slr_lbl" text="Me" textFill="#d1d5da">
+            <font>
+                <Font name="Calibri Bold" size="16.0" />
+            </font>
+            <graphic>
+                <Label text="Seller" textFill="#d1d5da">
+                    <font>
+                        <Font name="Calibri Bold" size="16.0" />
+                    </font>
+                </Label>
+            </graphic>
+        </Label>
+        <Label fx:id="byr_lbl" text="Me" textFill="#d1d5da">
+            <font>
+                <Font name="Calibri Bold" size="16.0" />
+            </font>
+            <graphic>
+                <Label text="Buyer: " textFill="#d1d5da">
+                    <font>
+                        <Font name="Calibri Bold" size="16.0" />
+                    </font>
+                </Label>
+            </graphic>
+        </Label>
+        <Label fx:id="prods_lbl" text="Me" textFill="#d1d5da">
+            <font>
+                <Font name="Calibri Bold" size="16.0" />
+            </font>
+            <graphic>
+                <Label text="Products" textFill="#d1d5da">
+                    <font>
+                        <Font name="Calibri Bold" size="16.0" />
+                    </font>
+                </Label>
+            </graphic>
+        </Label>
+        <Label fx:id="date_lbl" text="2000/10/3" textFill="#d1d5da">
+            <font>
+                <Font name="Calibri Bold" size="16.0" />
+            </font>
+            <graphic>
+                <Label text="Date: " textFill="#d1d5da">
+                    <font>
+                        <Font name="Calibri Bold" size="16.0" />
+                    </font>
+                </Label>
+            </graphic>
+        </Label>
+        <Label fx:id="totPrice_lbl" alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="1139.0" text="1000$" textFill="#3193fb">
+            <font>
+                <Font name="Calibri" size="16.0" />
+            </font>
+            <graphic>
+                <Label textFill="#d1d5da">
+                    <font>
+                        <Font name="Calibri Bold" size="16.0" />
+                    </font>
+                </Label>
+            </graphic>
+        </Label>
+    </children>
+    <padding>
+        <Insets bottom="6.0" left="16.0" right="6.0" top="6.0" />
+    </padding>
+</VBox>

@@ -1,0 +1,21 @@
+.menu-button{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 4;
+}
+
+.menu-button .context-menu {
+    -fx-effect: null;
+    -fx-pref-width: 115;
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 8;
+    -fx-border-width: 0.3;
+    -fx-border-color: #C9C9C9;
+    -fx-border-radius: 8;
+}
+
+.context-menu ,
+.context-menu:focused,
+.menu-item,
+.menu-item:focused{
+    -fx-background-color: white;
+}

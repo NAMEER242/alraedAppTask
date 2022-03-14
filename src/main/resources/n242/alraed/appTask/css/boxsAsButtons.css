@@ -1,0 +1,15 @@
+VBox:hover{
+    -fx-background-color: #E63046;
+}
+
+VBox:pressed{
+    -fx-background-color: #E26D7D;
+}
+
+HBox:hover{
+    -fx-background-color: #44494E;
+}
+
+HBox:pressed{
+    -fx-background-color: #14191E;
+}

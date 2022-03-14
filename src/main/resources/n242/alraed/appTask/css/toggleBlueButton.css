@@ -1,0 +1,12 @@
+Button{
+    -fx-background-color: #409DCE;
+    -fx-background-radius: 10;
+}
+
+.text{
+    -fx-fill: #ffffff;
+    -fx-font-family: "calibri";
+    -fx-font-style: italic;
+    -fx-font-size: 10;
+}
+

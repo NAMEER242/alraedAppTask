@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-radius: 8;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="n242.alraed.appTask.secondaryView.ReceiptsViewer">
+   <children>
+      <ScrollPane fx:id="receiptsView_sp" fitToWidth="true" style="-fx-background-radius: 0 0 2 2; -fx-border-color: #000000; -fx-border-width: 6 0 0 0;" stylesheets="@../css/scrollpane.css" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+         <content>
+            <FlowPane fx:id="receiptsViewer_fp" hgap="8.0" prefHeight="395.0" prefWidth="598.0" vgap="8.0">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="118.0" prefWidth="280.0" spacing="4.0" style="-fx-background-color: #2F363D; -fx-background-radius: 8; -fx-border-color: #141414; -fx-border-radius: 5;">
+                     <children>
+                        <Label fx:id="slr_lbl" text="Me" textFill="#d1d5da">
+                           <font>
+                              <Font name="Calibri Bold" size="16.0" />
+                           </font>
+                           <graphic>
+                              <Label text="Seller" textFill="#d1d5da">
+                                 <font>
+                                    <Font name="Calibri Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="byr_lbl" text="Me" textFill="#d1d5da">
+                           <font>
+                              <Font name="Calibri Bold" size="16.0" />
+                           </font>
+                           <graphic>
+                              <Label text="Buyer: " textFill="#d1d5da">
+                                 <font>
+                                    <Font name="Calibri Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="prods_lbl" text="Me" textFill="#d1d5da">
+                           <font>
+                              <Font name="Calibri Bold" size="16.0" />
+                           </font>
+                           <graphic>
+                              <Label text="Products" textFill="#d1d5da">
+                                 <font>
+                                    <Font name="Calibri Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="date_lbl" text="2000/10/3" textFill="#d1d5da">
+                           <font>
+                              <Font name="Calibri Bold" size="16.0" />
+                           </font>
+                           <graphic>
+                              <Label text="Date: " textFill="#d1d5da">
+                                 <font>
+                                    <Font name="Calibri Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Label>
+                        <Label fx:id="totPrice_lbl" alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="1139.0" text="1000$" textFill="#3193fb">
+                           <font>
+                              <Font name="Calibri" size="16.0" />
+                           </font>
+                           <graphic>
+                              <Label textFill="#d1d5da">
+                                 <font>
+                                    <Font name="Calibri Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="6.0" left="16.0" right="6.0" top="6.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </FlowPane>
+         </content>
+      </ScrollPane>
+      <HBox fx:id="navBar_hb" layoutX="20.0" layoutY="20.0" prefHeight="25.0" prefWidth="1024.0" style="-fx-background-color: #1D2125; -fx-background-radius: 2 2 0 0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="20.0" prefWidth="999999.0" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="999999.0">
+               <children>
+                  <VBox fx:id="exit_hb" alignment="CENTER" onMouseClicked="#bu_Exit" prefHeight="20.0" prefWidth="40.0" style="-fx-background-radius: 0 6 0 0;" stylesheets="@../css/boxsAsButtons.css">
+                     <children>
+                        <SVGPath fx:id="exit_svg" content="M14.272,5.887a.705.705,0,0,0-.938-.938l-3.72,3.72-3.72-3.72c-.714-.355-1.25.27-.938.938l3.72,3.72-3.72,3.72a.711.711,0,0,0,.938.938l3.72-3.72,3.72,3.72a.683.683,0,0,0,.938-.938l-3.72-3.72Z" fill="WHITE" mouseTransparent="true" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

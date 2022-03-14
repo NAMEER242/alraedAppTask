@@ -1,0 +1,36 @@
+.text-area {
+    -text-area-background:  #2F363D ;
+    -fx-background-color:  #2F363D;
+    -fx-text-fill: #D1D5DA;
+}
+
+.text-area .content {
+    -fx-background-color:  #2F363D ;
+}
+
+.scroll-pane:fitToWidth,
+.scroll-pane:fitToWidth .viewport{
+
+    -fx-background-color:  #1D2125;
+
+}
+
+.scroll-bar:vertical{
+    -fx-background-color: #00000000;
+    -fx-pref-width: 8;
+}
+
+.scroll-bar:vertical .increment-button .increment-arrow,
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button .decrement-arrow,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: #00000000;
+    -fx-pref-high: 0;
+    -fx-pref-width: 0;
+}
+
+.scroll-bar:vertical .thumb{
+    -fx-background-color: #141414;
+    -fx-background-radius: 2;
+
+}

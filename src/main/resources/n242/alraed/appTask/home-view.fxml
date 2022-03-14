@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="596.0" prefWidth="1024.0" style="-fx-background-radius: 8;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="n242.alraed.appTask.HomeView">
+   <children>
+      <ScrollPane fx:id="homeView_sp" fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: #24292E; -fx-background-radius: 0 0 4 4;" stylesheets="@css/scrollpane.css" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <content>
+            <VBox style="-fx-background-color: #24292E;">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #24292E; -fx-border-color: #141414; -fx-border-width: 1 0 1 0;">
+                     <children>
+                        <ImageView fitHeight="134.0" pickOnBounds="true" preserveRatio="true" />
+                        <VBox alignment="CENTER" spacing="6.0">
+                           <children>
+                              <ImageView fx:id="userImg" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" />
+                              <Label fx:id="userName" alignment="CENTER" prefHeight="0.0" prefWidth="171.0" text="Label" textFill="#d1d5da">
+                                 <font>
+                                    <Font name="Calibri Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitWidth="171.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                           <padding>
+                              <Insets left="8.0" right="8.0" top="14.0" />
+                           </padding>
+                        </VBox>
+                        <HBox alignment="BOTTOM_RIGHT" prefHeight="134.0" prefWidth="999999.0" spacing="6.0">
+                           <children>
+                              <Button fx:id="refresh_bu" focusTraversable="false" mnemonicParsing="false" stylesheets="@css/blackButton.css" text="Refresh" textFill="#d1d5da">
+                                 <font>
+                                    <Font name="Calibri Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="ViewReceipts_bu" focusTraversable="false" mnemonicParsing="false" stylesheets="@css/blackButton.css" text="View Receipts" textFill="#d1d5da">
+                                 <font>
+                                    <Font name="Calibri Bold" size="13.0" />
+                                 </font></Button>
+                              <Button fx:id="myCart_bu" focusTraversable="false" mnemonicParsing="false" stylesheets="@css/blackButton.css" text="MyCart" textFill="#d1d5da">
+                                 <font>
+                                    <Font name="Calibri Bold" size="13.0" />
+                                 </font></Button>
+                              <Label fx:id="totalCartItems_lbl" text="0" textFill="#d1d5da">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding></HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <VBox style="-fx-border-color: #141414; -fx-border-width: 1 0 1 0;">
+                           <children>
+                              <Label fx:id="title_lbl2" graphicTextGap="6.0" prefHeight="19.0" prefWidth="999999.0" text="Top Items" textFill="#d1d5da">
+                                 <font>
+                                    <Font name="Calibri Bold" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="4.0" />
+                                 </padding>
+                              </Label>
+                              <HBox fx:id="topItemsList_hb" prefHeight="218.0" prefWidth="985.0" spacing="10.0">
+                                 <children>
+                                    <VBox fx:id="itemView_vb" prefHeight="206.0" prefWidth="152.0" style="-fx-background-color: #1D2125; -fx-border-color: #141414; -fx-border-image-width: 1; -fx-background-radius: 8; -fx-border-radius: 8;">
+                                       <children>
+                                          <ImageView fx:id="img" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true">
+                                             <VBox.margin>
+                                                <Insets bottom="4.0" />
+                                             </VBox.margin>
+                                          </ImageView>
+                                          <Label fx:id="title_lbl" contentDisplay="RIGHT" prefHeight="19.0" prefWidth="1863.0" text="Test Item" textFill="#d1d5da">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="8.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <HBox prefHeight="0.0" prefWidth="150.0">
+                                             <children>
+                                                <Label fx:id="des_lbl" contentDisplay="TOP" prefHeight="27.0" prefWidth="104.0" text="Test Item" textFill="#959da5">
+                                                   <font>
+                                                      <Font name="Calibri Bold Italic" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="addToCart_bu" alignment="CENTER" depthTest="DISABLE" focusTraversable="false" maxHeight="22.0" maxWidth="22.0" mnemonicParsing="false" stylesheets="@css/blueButton.css" text="+" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Calibri" size="12.0" />
+                                                   </font></Button>
+                                             </children>
+                                             <padding>
+                                                <Insets left="16.0" right="4.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox fx:id="itemView_vb1" prefHeight="200.0" prefWidth="150.0" style="-fx-background-color: #dddddd;">
+                                       <children>
+                                          <ImageView fx:id="img1" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <VBox.margin>
+                                                <Insets bottom="4.0" />
+                                             </VBox.margin>
+                                          </ImageView>
+                                          <Label fx:id="title_lbl1" prefHeight="19.0" prefWidth="1863.0" text="Test Item">
+                                             <font>
+                                                <Font name="Segoe UI" size="16.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="8.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label fx:id="des_lbl1" prefHeight="629.0" prefWidth="1448.0" text="Test Item" textFill="#757575">
+                                             <font>
+                                                <Font name="Segoe UI Italic" size="12.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="12.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                           </padding>
+                        </VBox>
+                        <ImageView pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+                  <VBox>
+                     <children>
+                        <Label fx:id="title_lbl21" graphicTextGap="6.0" prefHeight="19.0" prefWidth="999999.0" text="Last Items" textFill="#d1d5da">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="4.0" />
+                           </padding>
+                        </Label>
+                        <FlowPane fx:id="lastItemsList_fp" hgap="8.0" vgap="6.0">
+                           <children>
+                              <VBox fx:id="itemView_vb2" prefHeight="200.0" prefWidth="150.0" style="-fx-background-color: #dddddd;">
+                                 <children>
+                                    <ImageView fx:id="img2" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                       <VBox.margin>
+                                          <Insets bottom="4.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <Label fx:id="title_lbl3" contentDisplay="RIGHT" prefHeight="19.0" prefWidth="1863.0" text="Test Item">
+                                       <font>
+                                          <Font name="Segoe UI" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="8.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="des_lbl2" prefHeight="629.0" prefWidth="1448.0" text="Test Item" textFill="#757575">
+                                       <font>
+                                          <Font name="Segoe UI Italic" size="12.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="12.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox fx:id="itemView_vb3" prefHeight="200.0" prefWidth="150.0" style="-fx-background-color: #dddddd;">
+                                 <children>
+                                    <ImageView fx:id="img3" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                       <VBox.margin>
+                                          <Insets bottom="4.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <Label fx:id="title_lbl4" contentDisplay="RIGHT" prefHeight="19.0" prefWidth="1863.0" text="Test Item">
+                                       <font>
+                                          <Font name="Segoe UI" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="8.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="des_lbl3" prefHeight="629.0" prefWidth="1448.0" text="Test Item" textFill="#757575">
+                                       <font>
+                                          <Font name="Segoe UI Italic" size="12.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="12.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox fx:id="itemView_vb4" prefHeight="200.0" prefWidth="150.0" style="-fx-background-color: #dddddd;">
+                                 <children>
+                                    <ImageView fx:id="img4" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                       <VBox.margin>
+                                          <Insets bottom="4.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <Label fx:id="title_lbl5" contentDisplay="RIGHT" prefHeight="19.0" prefWidth="1863.0" text="Test Item">
+                                       <font>
+                                          <Font name="Segoe UI" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="8.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="des_lbl4" prefHeight="629.0" prefWidth="1448.0" text="Test Item" textFill="#757575">
+                                       <font>
+                                          <Font name="Segoe UI Italic" size="12.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="12.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox fx:id="itemView_vb5" prefHeight="200.0" prefWidth="150.0" style="-fx-background-color: #dddddd;">
+                                 <children>
+                                    <ImageView fx:id="img5" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                       <VBox.margin>
+                                          <Insets bottom="4.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                    <Label fx:id="title_lbl6" contentDisplay="RIGHT" prefHeight="19.0" prefWidth="1863.0" text="Test Item">
+                                       <font>
+                                          <Font name="Segoe UI" size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="8.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="des_lbl5" prefHeight="629.0" prefWidth="1448.0" text="Test Item" textFill="#757575">
+                                       <font>
+                                          <Font name="Segoe UI Italic" size="12.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="12.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+                           </padding>
+                        </FlowPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <Button fx:id="addItem_bu" focusTraversable="false" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" stylesheets="@css/blackButton.css" text="+" textFill="#d1d5da" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="30.0">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Button>
+      <HBox fx:id="navBar_hb" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="1024.0" style="-fx-background-color: #24292E; -fx-background-radius: 4 4 0 0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="20.0" prefWidth="999999.0" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="999999.0">
+               <children>
+                  <HBox fx:id="minimize_hb" alignment="CENTER" onMouseClicked="#bu_Minimize" prefHeight="20.0" prefWidth="40.0" stylesheets="@css/boxsAsButtons.css">
+                     <children>
+                        <SVGPath fx:id="minimize_svg" content="M2258.355-3250h-9.714" fill="WHITE" mouseTransparent="true" smooth="false" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="0.75" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="full_hb" alignment="CENTER" onMouseClicked="#bu_FullS" prefHeight="20.0" prefWidth="40.0" stylesheets="@css/boxsAsButtons.css">
+                     <children>
+                        <SVGPath fx:id="full" content="M2233.189-3250h-7.425v7.034h7.425Z" fill="#ffffff00" mouseTransparent="true" smooth="false" stroke="WHITE" />
+                     </children>
+                  </HBox>
+                  <VBox fx:id="exit_hb" alignment="CENTER" onMouseClicked="#bu_Exit" prefHeight="20.0" prefWidth="40.0" style="-fx-background-radius: 0 6 0 0;" stylesheets="@css/boxsAsButtons.css">
+                     <children>
+                        <SVGPath fx:id="exit_svg" content="M14.272,5.887a.705.705,0,0,0-.938-.938l-3.72,3.72-3.72-3.72c-.714-.355-1.25.27-.938.938l3.72,3.72-3.72,3.72a.711.711,0,0,0,.938.938l3.72-3.72,3.72,3.72a.683.683,0,0,0,.938-.938l-3.72-3.72Z" fill="WHITE" mouseTransparent="true" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

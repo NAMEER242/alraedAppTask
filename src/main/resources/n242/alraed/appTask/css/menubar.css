@@ -1,0 +1,44 @@
+.menu-bar{
+    -fx-background-color: #00000000;
+}
+
+@font-face {
+    font-family: 'Aller Italic';
+    src: url('css_fonts/Aller_It.ttf');
+}
+
+.menu-bar .label{
+    -fx-font-family: "Aller Italic";
+    -fx-font-size: 16;
+    -fx-text-fill: #ffffff;
+}
+
+.menu-bar .menu{
+    -fx-border-color: #00000000;
+    -fx-border-width: 0 2 0 2;
+}
+
+.menu:showing {
+/* menu when it's being shown (activated) */
+    -fx-background-color: #11111111;
+}
+
+.menu-bar .context-menu {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 2;
+    -fx-pref-width: 200;
+    -fx-effect: null;/*no shadows*/
+}
+
+.menu-item .label{
+    -fx-text-fill: #000000;
+    -fx-font-size: 12;
+}
+
+.menu-item:focused {
+     -fx-background-color: #1890CB;
+}
+
+.menu-item:focused .label {
+     -fx-text-fill: #ffffff;
+}

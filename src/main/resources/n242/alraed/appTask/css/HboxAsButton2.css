@@ -1,0 +1,8 @@
+HBox{
+    -fx-background-color: #1C9DD7;
+    -fx-background-radius: 0 0 7.5 7.5;
+}
+
+HBox:pressed{
+    -fx-background-color: #1589C3;
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="339.0" prefWidth="232.0" style="-fx-background-color: #1D2125; -fx-background-radius: 3;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="n242.alraed.appTask.secondaryView.CartViewer">
+   <children>
+      <HBox fx:id="navBar_hb" layoutX="30.0" layoutY="30.0" prefHeight="25.0" prefWidth="1024.0" style="-fx-background-color: #1D2125; -fx-background-radius: 2 2 0 0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="20.0" prefWidth="999999.0" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="999999.0">
+               <children>
+                  <VBox fx:id="exit_hb" alignment="CENTER" onMouseClicked="#bu_Exit" prefHeight="20.0" prefWidth="40.0" style="-fx-background-radius: 0 6 0 0;" stylesheets="@../css/boxsAsButtons.css">
+                     <children>
+                        <SVGPath fx:id="exit_svg" content="M14.272,5.887a.705.705,0,0,0-.938-.938l-3.72,3.72-3.72-3.72c-.714-.355-1.25.27-.938.938l3.72,3.72-3.72,3.72a.711.711,0,0,0,.938.938l3.72-3.72,3.72,3.72a.683.683,0,0,0,.938-.938l-3.72-3.72Z" fill="WHITE" mouseTransparent="true" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="4.0" style="-fx-border-color: #000000aa; -fx-border-width: 0 0 1 0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Label contentDisplay="TOP" prefHeight="25.0" prefWidth="79.0" text="total items:" textFill="#d1d5da">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="totItems_lbl" prefHeight="25.0" prefWidth="79.0" text="0" textFill="#d1d5da">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="clear_bu" mnemonicParsing="false" stylesheets="@../css/blackButton.css" text="clear" textFill="#d1d5da">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+         </children>
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </padding>
+      </HBox>
+      <ScrollPane fx:id="cart_sp" fitToWidth="true" hbarPolicy="NEVER" layoutY="50.0" prefHeight="212.0" prefWidth="232.0" style="-fx-background-color: #00000000;" stylesheets="@../css/scrollpane.css" vbarPolicy="NEVER" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+         <content>
+            <VBox fx:id="items_vb" alignment="TOP_CENTER" prefHeight="235.0" prefWidth="230.0" spacing="6.0" style="-fx-background-color: #2F363D;">
+               <children>
+                  <Label fx:id="item_lbl" graphicTextGap="10.0" prefHeight="25.0" prefWidth="999999.0" style="-fx-background-color: #00000033; -fx-background-radius: 2; -fx-border-color: #141415; -fx-border-radius: 2;" text="item1" textFill="#d1d5da">
+                     <font>
+                        <Font name="Calibri Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <Button fx:id="remove_bu" alignment="CENTER" mnemonicParsing="false" stylesheets="@../css/redButton.css" text="x" textFill="#d1d5da" />
+                     </graphic>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <HBox layoutY="266.0" prefHeight="33.0" prefWidth="232.0" spacing="2.0" style="-fx-background-radius: 2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <TextField fx:id="byr_tf" prefHeight="25.0" prefWidth="186.0" promptText="sell to ..." style="-fx-background-color: #2F363D; -fx-background-radius: 5; -fx-text-fill: #D1D5DA;" stylesheets="@../css/blackTextField.css">
+               <font>
+                  <Font name="Cambria" size="12.0" />
+               </font></TextField>
+            <Button fx:id="buy_bu" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" stylesheets="@../css/blueButton.css" text="Buy" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="12.0" />
+               </font></Button>
+         </children>
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

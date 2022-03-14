@@ -1,0 +1,7 @@
+StackPane{
+    -fx-background-color:  #1C9DD7;
+}
+
+StackPane:pressed{
+    -fx-background-color: #0F76B1;
+}

@@ -1,0 +1,7 @@
+VBox{
+    -fx-background-color: #1790CB;
+}
+
+VBox:pressed{
+    -fx-background-color: #0F76B1;
+}

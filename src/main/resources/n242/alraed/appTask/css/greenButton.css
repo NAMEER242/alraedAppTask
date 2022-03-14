@@ -1,0 +1,16 @@
+Button{
+    -fx-background-color: #75DF9F;
+    -fx-background-radius: 8;
+}
+
+Button:pressed{
+    -fx-background-color: #9AF2BD;
+}
+
+.text{
+    -fx-fill: #343434;
+    -fx-font-family: "calibri";
+    -fx-font-style: italic;
+    -fx-font-size: 11;
+
+}
