@@ -219,7 +219,13 @@ public class HomeView {
 
     private byte[] getImageBytes(String path) {
 
-        File tempFiles = new File( Task.class.getResource("").getFile() + "tempFiles/" + path );
+        File tempDir = new File( System.getProperty( "user.dir" ) ).getParentFile();
+        File tempFiles = new File(tempDir.getPath() + "tempFiles/" + path);
+
+        if (!tempDir.exists()) {
+            tempDir.mkdir();
+        }
+
         if (tempFiles.exists()) {
             try {
 
