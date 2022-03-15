@@ -1,10 +1,15 @@
 package n242.alraed.appTask.secondaryView;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.HashMap;
+import javax.swing.text.DateFormatter;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
@@ -37,12 +42,13 @@ public class ReceiptsViewer {
     private String csrf;
     private String receiptsJson;
     private TitleBar_Events tEvent;
+    private final String serverDomain = "https://alraedTestingServer.pythonanywhere.com/";
 
     public ReceiptsViewer() {
 
         stage = ReceiptsViewerData.stage;
         csrf = ReceiptsViewerData.csrf;
-        receiptsJson = ReceiptsViewerData.receiptsJson;
+        receiptsJson = getReceiptsJson(0);
 
         stage.setOnShown( windowEvent -> {
 
@@ -59,6 +65,61 @@ public class ReceiptsViewer {
 
         } );
 
+    }
+
+    private String getReceiptsJson(int level) {
+        HashMap<String, String> headers = new HashMap<>();
+        headers.put( "X-CSRFToken", csrf );
+        byte[][] output = sendRequest( "GET", serverDomain, "getReceipts/", headers, "level=" + level );
+        String response = new String( output[0], StandardCharsets.UTF_8 );
+        return response;
+    }
+
+    private byte[][] sendRequest(String requestType, String host, String apiEndPoint, HashMap<String, String> headers, String... prams) {
+
+        StringBuilder parameters = new StringBuilder();
+        if (prams != null && prams.length > 0) {
+            parameters.append( "?" );
+            for (String p : prams) {
+                parameters.append( p ).append( "&" );
+            }
+        }
+
+        String charset = "UTF-8";
+        HttpURLConnection connection;
+        byte[] output = null;
+        String csrf = "", session;
+        String cookies = "";
+
+        try {
+
+            connection = (HttpURLConnection) (new URL(
+                    host + apiEndPoint + parameters
+            ).openConnection());
+
+            connection.setRequestMethod( requestType );
+            connection.setRequestProperty( "Accept-Charset", charset );
+            connection.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded;charset=" + charset );
+            for (String k : headers.keySet()) {
+                connection.addRequestProperty( k, headers.get( k ) );
+            }
+
+            if (connection.getHeaderFields().containsKey( "Set-Cookie" )) {
+                String csrfToken = connection.getHeaderFields().get( "Set-Cookie" ).get( 1 );
+                String sessionToken = connection.getHeaderFields().get( "Set-Cookie" ).get( 0 );
+                csrf = csrfToken.substring( 10, csrfToken.indexOf( ';' ) );
+                session = sessionToken.substring( 10, sessionToken.indexOf( ';' ) );
+                cookies = "csrftoken=" + csrf + "; sessionid=" + session;
+            }
+
+            InputStream is = connection.getInputStream();
+            output = is.readAllBytes();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return new byte[][]{output, csrf.getBytes(), cookies.getBytes()};
     }
 
     private void addAllReceipts(FlowPane receiptsViewer_fp) {
@@ -84,7 +145,7 @@ public class ReceiptsViewer {
             String buyer = data.getString( "buyer" );
             String product = data.getString( "product" );
             float price = data.getFloat( "price" );
-            int datetime = data.getInt( "datetime" );
+            Long datetime = data.getLong( "datetime" );
 
             URL viewUrl = Task.class.getResource( "fxmlFiles/receiptsView.fxml" );
             VBox view = (VBox) new FXMLLoader( viewUrl ).load();
@@ -113,14 +174,13 @@ public class ReceiptsViewer {
             byr.setText( buyer );
             prods.setText( product );
             totalPrice.setText( String.valueOf( price ) );
-            Date dateTime = new Date(datetime);
-            DateFormat df = new SimpleDateFormat("yy:MM:dd:HH:mm:ss");
-            date.setText( df.format( dateTime ) );
-
+            DateFormat df = new SimpleDateFormat("yy/MM/dd");
+            String finalDate = new DateFormatter( df ).valueToString( (float) datetime );
+            date.setText( finalDate );
 
             receiptsViewer_fp.getChildren().add( view );
 
-        } catch (IOException e) {
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
 

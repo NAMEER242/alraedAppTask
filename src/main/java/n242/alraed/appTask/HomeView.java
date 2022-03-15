@@ -219,8 +219,8 @@ public class HomeView {
 
     private byte[] getImageBytes(String path) {
 
-        File tempDir = new File( System.getProperty( "user.dir" ) ).getParentFile();
-        File tempFiles = new File(tempDir.getPath() + "tempFiles/" + path);
+        File tempDir = new File(new File( System.getProperty( "user.dir" ) ).getParent() + "/tempFiles");
+        File tempFiles = new File( tempDir + "/" + path );
 
         if (!tempDir.exists()) {
             tempDir.mkdir();
