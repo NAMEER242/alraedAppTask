@@ -160,13 +160,14 @@ public class CartViewer {
     private void buyAllItems() {
         if (!byr_tf.getText().equals( "" )) {
 
-            String prods = new JSONObject( itemsJson.get( 0 ) ).keys().next();
-            float price = 0;
+            JSONObject data = new JSONObject( itemsJson.get( 0 ) );
+            String prods = data.keys().next();
+            float price = data.getJSONObject( data.keys().next() ).getFloat( "price" );
 
             for (int i = 1; i < itemsJson.size(); i++) {
-                JSONObject data = new JSONObject( itemsJson.get( i ) );
-                prods += "," + data.keys().next();
-                price += data.getJSONObject( data.keys().next() ).getFloat( "price" );
+                JSONObject data1 = new JSONObject( itemsJson.get( i ) );
+                prods += "," + data1.keys().next();
+                price += data1.getJSONObject( data1.keys().next() ).getFloat( "price" );
             }
 
             buyItem( prods, price );

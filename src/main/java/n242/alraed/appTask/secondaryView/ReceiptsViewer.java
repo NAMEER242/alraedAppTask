@@ -147,6 +147,9 @@ public class ReceiptsViewer {
             float price = data.getFloat( "price" );
             Long datetime = data.getLong( "datetime" );
 
+            JSONObject jo = new JSONArray( getItemName( product ) ).getJSONObject( 0 );
+            product = jo.getJSONObject( jo.keys().next() ).getString( "title" );
+
             URL viewUrl = Task.class.getResource( "fxmlFiles/receiptsView.fxml" );
             VBox view = (VBox) new FXMLLoader( viewUrl ).load();
 
@@ -184,6 +187,14 @@ public class ReceiptsViewer {
             e.printStackTrace();
         }
 
+    }
+
+    private String getItemName(String id) {
+        HashMap<String, String> headers = new HashMap<>();
+        headers.put( "X-CSRFToken", csrf );
+        byte[][] output = sendRequest( "GET", serverDomain, "getItems/", headers, "IID=" + id );
+        String response = new String( output[0], StandardCharsets.UTF_8 );
+        return response;
     }
 
     /**
