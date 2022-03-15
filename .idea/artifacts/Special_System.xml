@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Special System">
+    <output-path>$PROJECT_DIR$/out/artifacts/Special_System</output-path>
+    <root id="root">
+      <element id="archive" name="Special_System.jar">
+        <element id="module-output" name="Special System" />
+      </element>
+    </root>
+  </artifact>
+</component>
